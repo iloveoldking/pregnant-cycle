@@ -6,20 +6,24 @@
     <input type="text" v-model="smonth" :disabled="!editable" maxlength="2" />
     <div class="split">月</div>
     <input type="text" v-model="sday" :disabled="!editable" maxlength="2" />
+  </div>
 
-    <div class="split">到</div>
+  <div class="time-split">到</div>
 
+  <div class="flex no-margin">
     <input type="text" v-model="eyear" :disabled="!editable" maxlength="4" />
     <div class="split">年</div>
     <input type="text" v-model="emonth" :disabled="!editable" maxlength="2" />
     <div class="split">月</div>
     <input type="text" v-model="eday" :disabled="!editable" maxlength="2" />
-    <button class="btn" @click="editable = !editable">{{ !editable ? '设置日期' : '取消' }}</button>
   </div>
+
+  <button class="btn" @click="editable = !editable">{{ !editable ? '设置日期' : '取消' }}</button>
+
   <div class="flex">
     <div>当前周期：{{ cycle.weeks }}w</div>
     <div v-if="cycle.days > 0">&nbsp;+ {{ cycle.days }}</div>
-    <div>（{{ cycle.allWeeks }}w），</div>
+    <div>（ {{ cycle.allWeeks }}w ），</div>
     <div>已 {{ cycle.allDays }} 天。</div>
   </div>
 </template>
@@ -77,13 +81,18 @@ input {
   padding: 2px 5px;
   height: 28px;
 }
+.no-margin {
+  margin: 0;
+}
 .split {
   margin: 0 5px;
   line-height: 28px;
 }
+.time-split {
+  margin: 10px 0;
+}
 .btn {
   width: 80px;
-  line-height: 28px;
   border-radius: 4px;
   outline: none;
   border: none;
@@ -91,6 +100,7 @@ input {
   color: #fff;
   padding: 0 5px;
   cursor: pointer;
-  margin-left: 25px;
+  margin-top: 30px;
+  line-height: 28px;
 }
 </style>
