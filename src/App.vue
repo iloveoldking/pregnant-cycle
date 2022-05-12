@@ -53,7 +53,7 @@ const eday = ref(dayjs().date());
 
 const lsyear = ref(2021);
 const lsmonth = ref(11);
-const lsday = ref(25);
+const lsday = ref(24);
 
 const csyear = ref(2021);
 const csmonth = ref(11);
