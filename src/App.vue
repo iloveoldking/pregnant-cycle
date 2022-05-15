@@ -130,54 +130,48 @@ const ccycle = computed(() => {
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: calc(100vw / 3.75);
+}
 html,
 body {
   width: 100%;
   height: 100%;
 }
 #app {
-  padding: 20px;
+  padding: 0.2rem;
   height: 100%;
   position: relative;
   background: linear-gradient(#96dcd6, #fddcd3);
+  overflow: auto;
+  font-size: 0.12rem;
 }
-/* #app::before {
-  display: block;
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: url(./assets/images/bg.jpg) no-repeat center/cover;
-  filter: blur(2px);
-  z-index: -1;
-} */
 .flex {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 0.15rem;
 }
 input {
-  width: 60px;
-  border-radius: 4px;
+  width: 0.6rem;
+  border-radius: 0.04rem;
   outline: none;
-  border: #bbb 1px solid;
-  padding: 2px 5px;
-  height: 28px;
+  border: #bbb 0.01rem solid;
+  padding: 0.02rem 0.05rem;
+  height: 0.28rem;
 }
 .no-margin {
   margin: 0;
 }
 .split {
-  margin: 0 5px;
-  line-height: 28px;
+  margin: 0 0.05rem;
+  line-height: 0.28rem;
 }
 .time-split {
-  margin: 10px 0;
+  margin: 0.1rem 0;
 }
 .title {
-  margin-top: 50px;
+  margin-top: 0.5rem;
   display: flex;
   align-items: center;
 }
