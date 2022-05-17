@@ -1,63 +1,66 @@
 <template>
-  <div class="title">
-    <div class="label text-red">临床孕周</div>
-    <div>，以 {{ lstime }} 作为周期计算开始时间</div>
-  </div>
-  <div class="flex">
-    <input type="text" v-model="lsyear" maxlength="4" />
-    <div class="split">年</div>
-    <input type="text" v-model="lsmonth" maxlength="2" />
-    <div class="split">月</div>
-    <input type="text" v-model="lsday" maxlength="2" />
-  </div>
-  <div class="flex text-red">
-    <div>孕周：{{ lcycle.weeks }}w</div>
-    <div v-if="lcycle.days > 0">&nbsp;+ {{ lcycle.days }}</div>
-    <div>（ {{ lcycle.allWeeks }}w ），</div>
-    <div>已 {{ lcycle.allDays }} 天（{{ ((lcycle.allDays / 280) * 100).toFixed(0) }}%）</div>
-  </div>
-  <div class="flex text-red">
-    <div>预产期：{{ letime }}，</div>
-    <div>
-      剩余 {{ 280 - lcycle.allDays }} 天（{{
-        (((280 - lcycle.allDays) / 280) * 100).toFixed(0)
-      }}%）
+  <img class="gif" src="./assets/cat.webp" alt="" />
+  <div class="main">
+    <div class="title no-margin">
+      <div class="label text-red">临床孕周</div>
+      <div>，以 {{ lstime }} 作为周期计算开始时间</div>
     </div>
-  </div>
-
-  <div class="title margin50">
-    <div class="label text-red">超声孕周</div>
-    <div>，以 {{ cstime }} 作为周期计算开始时间</div>
-  </div>
-  <div class="flex">
-    <input type="text" v-model="csyear" maxlength="4" />
-    <div class="split">年</div>
-    <input type="text" v-model="csmonth" maxlength="2" />
-    <div class="split">月</div>
-    <input type="text" v-model="csday" maxlength="2" />
-  </div>
-  <div class="flex text-red">
-    <div>孕周：{{ ccycle.weeks }}w</div>
-    <div v-if="ccycle.days > 0">&nbsp;+ {{ ccycle.days }}</div>
-    <div>（ {{ ccycle.allWeeks }}w ），</div>
-    <div>已 {{ ccycle.allDays }} 天（{{ ((ccycle.allDays / 280) * 100).toFixed(0) }}%）</div>
-  </div>
-  <div class="flex text-red">
-    <div>预产期：{{ cetime }}，</div>
-    <div>
-      剩余 {{ 280 - ccycle.allDays }} 天（{{
-        (((280 - ccycle.allDays) / 280) * 100).toFixed(0)
-      }}%）
+    <div class="flex">
+      <input type="text" v-model="lsyear" maxlength="4" />
+      <div class="split">年</div>
+      <input type="text" v-model="lsmonth" maxlength="2" />
+      <div class="split">月</div>
+      <input type="text" v-model="lsday" maxlength="2" />
     </div>
-  </div>
+    <div class="flex text-red">
+      <div>孕周：{{ lcycle.weeks }}w</div>
+      <div v-if="lcycle.days > 0">&nbsp;+ {{ lcycle.days }}</div>
+      <div>（ {{ lcycle.allWeeks }}w ），</div>
+      <div>已 {{ lcycle.allDays }} 天（{{ ((lcycle.allDays / 280) * 100).toFixed(0) }}%）</div>
+    </div>
+    <div class="flex text-red">
+      <div>预产期：{{ letime }}，</div>
+      <div>
+        剩余 {{ 280 - lcycle.allDays }} 天（{{
+          (((280 - lcycle.allDays) / 280) * 100).toFixed(0)
+        }}%）
+      </div>
+    </div>
 
-  <div class="flex margin50">
-    <div>截至：</div>
-    <input type="text" v-model="eyear" maxlength="4" />
-    <div class="split">年</div>
-    <input type="text" v-model="emonth" maxlength="2" />
-    <div class="split">月</div>
-    <input type="text" v-model="eday" maxlength="2" />
+    <div class="title margin50">
+      <div class="label text-red">超声孕周</div>
+      <div>，以 {{ cstime }} 作为周期计算开始时间</div>
+    </div>
+    <div class="flex">
+      <input type="text" v-model="csyear" maxlength="4" />
+      <div class="split">年</div>
+      <input type="text" v-model="csmonth" maxlength="2" />
+      <div class="split">月</div>
+      <input type="text" v-model="csday" maxlength="2" />
+    </div>
+    <div class="flex text-red">
+      <div>孕周：{{ ccycle.weeks }}w</div>
+      <div v-if="ccycle.days > 0">&nbsp;+ {{ ccycle.days }}</div>
+      <div>（ {{ ccycle.allWeeks }}w ），</div>
+      <div>已 {{ ccycle.allDays }} 天（{{ ((ccycle.allDays / 280) * 100).toFixed(0) }}%）</div>
+    </div>
+    <div class="flex text-red">
+      <div>预产期：{{ cetime }}，</div>
+      <div>
+        剩余 {{ 280 - ccycle.allDays }} 天（{{
+          (((280 - ccycle.allDays) / 280) * 100).toFixed(0)
+        }}%）
+      </div>
+    </div>
+
+    <div class="flex margin50">
+      <div>截至：</div>
+      <input type="text" v-model="eyear" maxlength="4" />
+      <div class="split">年</div>
+      <input type="text" v-model="emonth" maxlength="2" />
+      <div class="split">月</div>
+      <input type="text" v-model="eday" maxlength="2" />
+    </div>
   </div>
 </template>
 
@@ -130,7 +133,8 @@ html {
   font-size: calc(100vw / 3.75);
 }
 html,
-body {
+body,
+#app {
   width: 100%;
   height: 100%;
 }
@@ -138,10 +142,12 @@ body {
   font-size: 0.14rem;
 }
 #app {
-  padding: 0.2rem;
-  height: 100%;
+  /* background: linear-gradient(#fff, #96dcd6, #fddcd3); */
+  background: linear-gradient(#fff 20%, #c5e8e4 40%, #eedcd3);
+}
+.main {
+  padding: 0 0.1rem;
   position: relative;
-  background: linear-gradient(#96dcd6, #fddcd3);
   overflow: auto;
 }
 .flex {
@@ -161,6 +167,9 @@ input {
 }
 .no-margin {
   margin: 0;
+}
+.margin30 {
+  margin-top: 0.3rem;
 }
 .margin50 {
   margin-top: 0.5rem;
@@ -182,5 +191,9 @@ input {
 }
 .text-red {
   color: #f00;
+}
+.gif {
+  width: 100%;
+  height: 1.01rem;
 }
 </style>
