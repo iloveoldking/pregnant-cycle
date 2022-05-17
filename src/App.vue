@@ -135,7 +135,7 @@ body {
   height: 100%;
 }
 body {
-  font-size: 0.12rem;
+  font-size: 0.14rem;
 }
 #app {
   padding: 0.2rem;
@@ -157,7 +157,7 @@ input {
   border: #bbb 0.01rem solid;
   padding: 0.02rem 0.05rem;
   height: 0.28rem;
-  font-size: 0.12rem;
+  font-size: 0.14rem;
 }
 .no-margin {
   margin: 0;
