@@ -1,13 +1,4 @@
 <template>
-  <div class="flex no-margin">
-    <div>截至时间：</div>
-    <input type="text" v-model="eyear" maxlength="4" />
-    <div class="split">年</div>
-    <input type="text" v-model="emonth" maxlength="2" />
-    <div class="split">月</div>
-    <input type="text" v-model="eday" maxlength="2" />
-  </div>
-
   <div class="title">
     <div class="label text-red">临床孕周</div>
     <div>，以 {{ lstime }} 作为周期计算开始时间</div>
@@ -19,24 +10,22 @@
     <div class="split">月</div>
     <input type="text" v-model="lsday" maxlength="2" />
   </div>
-
   <div class="flex text-red">
     <div>孕周：{{ lcycle.weeks }}w</div>
     <div v-if="lcycle.days > 0">&nbsp;+ {{ lcycle.days }}</div>
     <div>（ {{ lcycle.allWeeks }}w ），</div>
-    <div>已 {{ lcycle.allDays }} 天（{{ ((lcycle.allDays / 280) * 100).toFixed(0) }}%）。</div>
+    <div>已 {{ lcycle.allDays }} 天（{{ ((lcycle.allDays / 280) * 100).toFixed(0) }}%）</div>
   </div>
-
   <div class="flex text-red">
     <div>预产期：{{ letime }}，</div>
     <div>
       剩余 {{ 280 - lcycle.allDays }} 天（{{
         (((280 - lcycle.allDays) / 280) * 100).toFixed(0)
-      }}%）。
+      }}%）
     </div>
   </div>
 
-  <div class="title">
+  <div class="title margin50">
     <div class="label text-red">超声孕周</div>
     <div>，以 {{ cstime }} 作为周期计算开始时间</div>
   </div>
@@ -47,21 +36,28 @@
     <div class="split">月</div>
     <input type="text" v-model="csday" maxlength="2" />
   </div>
-
   <div class="flex text-red">
     <div>孕周：{{ ccycle.weeks }}w</div>
     <div v-if="ccycle.days > 0">&nbsp;+ {{ ccycle.days }}</div>
     <div>（ {{ ccycle.allWeeks }}w ），</div>
-    <div>已 {{ ccycle.allDays }} 天（{{ ((ccycle.allDays / 280) * 100).toFixed(0) }}%）。</div>
+    <div>已 {{ ccycle.allDays }} 天（{{ ((ccycle.allDays / 280) * 100).toFixed(0) }}%）</div>
   </div>
-
   <div class="flex text-red">
     <div>预产期：{{ cetime }}，</div>
     <div>
       剩余 {{ 280 - ccycle.allDays }} 天（{{
         (((280 - ccycle.allDays) / 280) * 100).toFixed(0)
-      }}%）。
+      }}%）
     </div>
+  </div>
+
+  <div class="flex margin50">
+    <div>截至：</div>
+    <input type="text" v-model="eyear" maxlength="4" />
+    <div class="split">年</div>
+    <input type="text" v-model="emonth" maxlength="2" />
+    <div class="split">月</div>
+    <input type="text" v-model="eday" maxlength="2" />
   </div>
 </template>
 
@@ -138,13 +134,15 @@ body {
   width: 100%;
   height: 100%;
 }
+body {
+  font-size: 0.12rem;
+}
 #app {
   padding: 0.2rem;
   height: 100%;
   position: relative;
   background: linear-gradient(#96dcd6, #fddcd3);
   overflow: auto;
-  font-size: 0.12rem;
 }
 .flex {
   display: flex;
@@ -153,7 +151,7 @@ body {
   margin-top: 0.15rem;
 }
 input {
-  width: 0.6rem;
+  width: 0.55rem;
   border-radius: 0.04rem;
   outline: none;
   border: #bbb 0.01rem solid;
@@ -164,6 +162,9 @@ input {
 .no-margin {
   margin: 0;
 }
+.margin50 {
+  margin-top: 0.5rem;
+}
 .split {
   margin: 0 0.05rem;
   line-height: 0.28rem;
@@ -172,12 +173,12 @@ input {
   margin: 0.1rem 0;
 }
 .title {
-  margin-top: 0.5rem;
   display: flex;
   align-items: center;
 }
 .title .label {
   font-weight: bold;
+  text-decoration: underline;
 }
 .text-red {
   color: #f00;
