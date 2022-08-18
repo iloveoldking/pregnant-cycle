@@ -5,13 +5,13 @@
       <div class="label text-red">临床孕周</div>
       <div>，以 {{ lstime }} 作为周期计算开始时间</div>
     </div>
-    <div class="flex">
+    <!-- <div class="flex">
       <input type="text" v-model="lsyear" maxlength="4" />
       <div class="split">年</div>
       <input type="text" v-model="lsmonth" maxlength="2" />
       <div class="split">月</div>
       <input type="text" v-model="lsday" maxlength="2" />
-    </div>
+    </div> -->
     <div class="flex text-red">
       <div>孕周：{{ lcycle.weeks }}w</div>
       <div v-if="lcycle.days > 0">&nbsp;+ {{ lcycle.days }}</div>
@@ -31,13 +31,13 @@
       <div class="label text-red">超声孕周</div>
       <div>，以 {{ cstime }} 作为周期计算开始时间</div>
     </div>
-    <div class="flex">
+    <!-- <div class="flex">
       <input type="text" v-model="csyear" maxlength="4" />
       <div class="split">年</div>
       <input type="text" v-model="csmonth" maxlength="2" />
       <div class="split">月</div>
       <input type="text" v-model="csday" maxlength="2" />
-    </div>
+    </div> -->
     <div class="flex text-red">
       <div>孕周：{{ ccycle.weeks }}w</div>
       <div v-if="ccycle.days > 0">&nbsp;+ {{ ccycle.days }}</div>
